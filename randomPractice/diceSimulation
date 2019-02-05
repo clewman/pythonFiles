@@ -1,0 +1,12 @@
+#random dice rolling simulator
+
+import random
+
+def main():
+  sides = 6
+  rolling = True
+  while rolling:
+    roll_again = input('Type ENTER to roll, or type QUIT to exit.')
+    if roll_again.lower() != 'quit':
+      num_rolled = roll(sides)
+      print('You rolled a ', num_rolled)

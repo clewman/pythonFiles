@@ -32,7 +32,9 @@ for i in range (len(display)):
 # print(' '.join(display))
 
 count = 0
-while count < len(answer):
+incorrect = 5
+
+while count < len(answer) and incorrect > 0:
     guess = input('Please guess a letter: ')
     guess = guess.upper()
     print(count)
@@ -42,11 +44,18 @@ while count < len(answer):
             display[i] = guess
             count = count + 1
             used_letters.remove(guess)
+
     if guess not in display:
-        print('Sorry, that is incorrect.')
+        incorrect = incorrect - 1
+        print(' You have ', incorrect, ' chances left.')
+
 
     print('You have guessed: ', count, 'correct characters.')
-
+    print('You have', incorrect, ' chances left.')
     print(' '.join(display))
 
-print(f'You guessed the 80s band! -- {answer} --')
+if count == len(answer):
+    print(f'You guessed the 80s band! -- {answer} --')
+
+else:
+    print('You lose')

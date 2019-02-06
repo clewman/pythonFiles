@@ -2,7 +2,6 @@
 #make a hangman display that fills in each time someone guesses
 #display the word when they win
 #tell how many characters are in the answer
-#tell how many characters are left
 
 import random
 
